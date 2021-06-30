@@ -94,6 +94,10 @@ class FlysystemLocalTransportTest extends VdmLibraryFlysystemTransportKernelTest
 
         $this->assertCount(2, $handler->files);
 
+        usort($handler->files, function ($a, $b) {
+            return ($a->path() < $b->path()) ? -1 : 1;
+        });
+
         /** @var FileAttributes $file1 */
         $file1 = $handler->files[0];
         $this->assertEquals('file', $file1->type());

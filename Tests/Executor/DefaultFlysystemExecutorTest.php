@@ -27,6 +27,12 @@ class DefaultFlysystemExecutorTest extends TestCase
 
         $this->assertCount(2, $envelopes);
 
+        usort($envelopes, function ($a, $b) {
+            $fileA = $a->getMessage()->getPayload();
+            $fileB = $b->getMessage()->getPayload();
+            return ($fileA->path() < $fileB->path()) ? -1 : 1;
+        });
+
         $this->assertInstanceOf(Envelope::class, $envelopes[0]);
         $this->assertNull($envelopes[0]->last(StopAfterHandleStamp::class));
         $message1 = $envelopes[0]->getMessage();
