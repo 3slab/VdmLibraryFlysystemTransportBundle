@@ -1,0 +1,11 @@
+flysystem:
+  storages:
+    source.storage:
+      adapter: 'local'
+      options:
+        directory: '%kernel.project_dir%/storage/source'
+
+    destination.storage:
+      adapter: 'local'
+      options:
+        directory: '%kernel.project_dir%/storage/destination'

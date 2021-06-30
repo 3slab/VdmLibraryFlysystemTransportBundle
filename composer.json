@@ -1,0 +1,47 @@
+{
+    "name": "3slab/vdm-library-flysystem-transport-bundle",
+    "description": "Vdm Flysystem Transport",
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jonathan Bouzekri",
+            "email": "jonathan.bouzekri@suez.com"
+        },
+        {
+            "name": "Julian Marié",
+            "email": "julian.marie@free.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vdm\\Bundle\\LibraryFlysystemTransportBundle\\": ""
+        }
+    },
+    "require": {
+        "ext-json": "*",
+        "3slab/vdm-library-bundle": "^3.0",
+        "league/flysystem-bundle": "^2.0",
+        "league/flysystem-sftp": "^2.0"
+    },
+    "require-dev": {
+        "ext-xml": "*",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "phpunit/phpunit": "^9",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.x-dev"
+        }
+    },
+    "suggest": {
+        "league/flysystem-async-aws-s3": "If you want to communicate with AWS S3 asynchronously",
+        "league/flysystem-aws-s3-v3": "If you want to communicate with AWS S3 synchronously",
+        "league/flysystem-ftp": "If you want to communicate with the FTP protocol",
+        "league/flysystem-google-cloud-storage": "If you want to communicate with Google Cloud Storage",
+        "league/flysystem-memory": "If you want to communicate with in memory data",
+        "league/flysystem-sftp": "If you want to communicate with the SFTP protocol"
+    }
+}

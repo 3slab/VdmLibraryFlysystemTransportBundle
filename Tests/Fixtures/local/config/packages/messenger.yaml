@@ -1,0 +1,14 @@
+framework:
+  messenger:
+    transports:
+      source:
+        dsn: "vdm+flysystem://source.storage"
+        retry_strategy:
+          max_retries: 0
+        options:
+          flysystem_executor: Vdm\Bundle\LibraryFlysystemTransportBundle\Tests\Fixtures\AppBundle\Executor\CustomFlysystemExecutor
+
+      destination:
+        dsn: "vdm+flysystem://destination.storage"
+        retry_strategy:
+          max_retries: 0
