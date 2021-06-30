@@ -31,6 +31,10 @@ class DefaultFlysystemExecutor extends AbstractFlysystemExecutor
     {
         $files = $this->listContents('/');
 
+        usort($files, function ($a, $b) {
+            return ($a->path() < $b->path()) ? -1 : 1;
+        });
+
         foreach ($files as $key => $file) {
             $file = $this->download($file);
 
