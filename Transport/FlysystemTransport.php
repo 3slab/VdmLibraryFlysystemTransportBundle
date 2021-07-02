@@ -11,9 +11,10 @@ namespace Vdm\Bundle\LibraryFlysystemTransportBundle\Transport;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Transport\TransportInterface;
+use Vdm\Bundle\LibraryBundle\Transport\TransportCollectableInterface;
 use Vdm\Bundle\LibraryFlysystemTransportBundle\Executor\AbstractFlysystemExecutor;
 
-class FlysystemTransport implements TransportInterface
+class FlysystemTransport implements TransportInterface, TransportCollectableInterface
 {
     /**
      * @var AbstractFlysystemExecutor $executor
